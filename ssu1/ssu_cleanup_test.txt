@@ -1,0 +1,81 @@
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu1$ ./ssu_cleanup
+20220000> ls
+ERROR : Prompt() "ls" is not command
+
+20220000> tree .
+.
+├─  Makefile
+├─  ssu_cleanup
+├─  ssu_cleanup.c
+├─  ssu_cleanup.o
+└─  test1/
+    ├─  a/
+    │   ├─  b/
+    │   ├─  c.txt
+    │   └─  d/
+    ├─  e.txt
+    └─  f/
+        ├─  g/
+        │   └─  h.txt
+        └─  i.txt
+
+7 directories, 8 files
+
+20220000> tree test1
+test1
+├─  a/
+│   ├─  b/
+│   ├─  c.txt
+│   └─  d/
+├─  e.txt
+└─  f/
+    ├─  g/
+    │   └─  h.txt
+    └─  i.txt
+
+6 directories, 4 files
+
+20220000> help arrange
+Usage:
+  > arrange <DIR_PATH> [OPTION]...
+	<none> : Arrange the directory if <DIR_PATH> is a directory
+	-d <output_path> : Specify the output directory <output_path>
+	      where <DIR_PATH> will be arranged if <DIR_PATH> is a directory
+	-t <seconds> : Only arrange files that were modified more than <seconds> seconds ago
+	-x <exclude_path1, exclude_path2, ...> : Arrange the directory
+	      if <DIR_PATH> is a directory except for the files inside <exclude_path> directory
+	-e <extension1, extension2, ...> : Arrange the directory with
+	      the specified extension <extension1, extension2, ...>
+
+20220000> arrange test1
+<test1_arranged> directory make!
+<txt> directory creat!
+test1 arranged
+
+20220000> tree .
+.
+├─  Makefile
+├─  ssu_cleanup
+├─  ssu_cleanup.c
+├─  ssu_cleanup.o
+├─  test1/
+│   ├─  a/
+│   │   ├─  b/
+│   │   ├─  c.txt
+│   │   └─  d/
+│   ├─  e.txt
+│   └─  f/
+│       ├─  g/
+│       │   └─  h.txt
+│       └─  i.txt
+└─  test1_arranged/
+    └─  txt/
+        ├─  c.txt
+        ├─  e.txt
+        ├─  h.txt
+        └─  i.txt
+
+9 directories, 12 files
+
+20220000> exit
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu1$

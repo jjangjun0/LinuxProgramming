@@ -1,0 +1,30 @@
+// ext2 파일 시스템 이미지 생성 방법 //
+
+// 1.
+% dd if=/dev/zero of=ext2disk.img bs=1M count=100
+	// if=/dev/zero : 빈 데이터를 입력
+	// of=ext2disk.img : ext2disk.img라는 이름으로 저장
+	// bs=1M : 한 번에 1MB씩 쓰기
+	// count=100 : 100MB 생성
+
+// 2.
+% mkfs.ext2 ext2disk.img
+	// ext2disk.img 파일을 ext2 파일 시스템으로 포맷
+
+// 3.
+% mkdir -p ~/mnt/ext2disk
+	// 파일 시스템을 사용할 디렉토리 생성
+
+// 4.
+% sudo mount -o loop ext2disk.img ~/mnt/ext2disk
+	// 파일 기반 가상 디스크(ext2disk.img)를 loopback 장치로 마운트
+	-o loop 옵션으로 일반 파일을 가상의 디스크(loopback 장치)로 인식해 마운트
+	// 마운트한 뒤에 ~/mnt/ext2disk 경로에 디렉토리나 파일을 생성하면 ext2disk.img에 반영됨
+
+// 5.
+% sudo umount ~/mnt/ext2disk
+	// 마운트 해제
+
+	// 프로그램 종료 시에 사용할 것.
+	// umount 된 디렉토리를 다시 4번의 명령어(mount) 입력 시,
+	// 해당 디렉토리를 가상화한 디스크를 읽어 디렉토리를 복구한다.

@@ -1,0 +1,259 @@
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu2$ ./ssu_cleanupd
+20220000> ls
+ls는 지정된 command가 아닙니다.
+Usage:
+  > show
+     <none> : show monitoring deamon process info
+  > add <DIR_PATH> [OPTION]...
+     <none> : add deamon process monitoring the <DIR_PATH> directory
+     -d  <OUTPUT_PATH>  : Specify the output directory <OUTPUT_PATH> where <DIR_PATH> will be arranged
+     -i <TIME_INTERVAL> : Set the time interval for the daemon process to monitor in seconds.
+     -l <MAX_LOG_LINES> : Set the maximum number of log lines the daemon process will record.
+     -x <EXCLUDE_PATH1, EXCLUDE_PATH2, ...> : Exclude all subfiles in the specified directories.
+     -e <EXTENSION1, EXTENSION2, ...> : Specify the file extensions to be organized.
+     -m <M> : Specify the value for the <M> option.
+  > modify <DIR_PATH> [OPTION]...
+     <none> : modify deamon process config monitoring the <DIR_PATH> directory
+     -d  <OUTPUT_PATH>  : Specify the output directory <OUTPUT_PATH> where <DIR_PATH> will be arranged
+     -i <TIME_INTERVAL> : Set the time interval for the daemon process to monitor in seconds.
+     -l <MAX_LOG_LINES> : Set the maximum number of log lines the daemon process will record.
+     -x <EXCLUDE_PATH1, EXCLUDE_PATH2, ...> : Exclude all subfiles in the specified directories.
+     -e <EXTENSION1, EXTENSION2, ...> : Specify the file extensions to be organized.
+     -m <M> : Specify the value for the <M> option.
+  > remove <DIR_PATH>
+     <none> : remove deamon process monitoring the <DIR_PATH> directory
+  > help [COMMAND]
+  > exit
+
+20220000> show
+Current working daemon process list
+
+
+0. exit
+
+Select one to see process info : 0
+20220000> add TEST -x TEST/A -e c txt   
+20220000> show
+Current working daemon process list
+
+
+0. exit
+1. /home/junyoung/LinuxProgramming/ssu2/TEST
+
+Select one to see process info : 1
+1. config detail
+
+monitoring_path : /home/junyoung/LinuxProgramming/ssu2/TEST
+pid : 2412
+start_time : 2025-06-20 01:47:23
+output_path : /home/junyoung/LinuxProgramming/ssu2/TEST_arranged
+time_interval : 10
+max_log_lines : none
+exclude_path : /home/junyoung/LinuxProgramming/ssu2/TEST/A
+extension : c,txt
+mode : 1
+
+2. log detail
+
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/abc.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/abc.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t1.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t1.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t2.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t2.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t3.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t3.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/good.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/good.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/a.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/a.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/b.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/b.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/c.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/c.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/hello.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/hello.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/kkk.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/newTime.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/newTime.txt]
+
+20220000> show
+Current working daemon process list
+
+
+0. exit
+1. /home/junyoung/LinuxProgramming/ssu2/TEST
+
+Select one to see process info : 1
+1. config detail
+
+monitoring_path : /home/junyoung/LinuxProgramming/ssu2/TEST
+pid : 2412
+start_time : 2025-06-20 01:47:23
+output_path : /home/junyoung/LinuxProgramming/ssu2/TEST_arranged
+time_interval : 10
+max_log_lines : none
+exclude_path : /home/junyoung/LinuxProgramming/ssu2/TEST/A
+extension : c,txt
+mode : 1
+
+2. log detail
+
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/abc.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/abc.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t1.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t1.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t2.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t2.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t3.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t3.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/good.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/good.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/a.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/a.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/b.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/b.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/c.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/c.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/hello.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/hello.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/kkk.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/newTime.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/newTime.txt]
+[01:49:33] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/a.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/a.c]
+[01:49:53] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/c.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/c.c]
+[01:50:43] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/kkk.txt]
+
+20220000> exit
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu2$ cat TEST/kkk.txt
+kkkkkkk
+kkkkkkk
+kkkkkkk
+kkkkkkk
+kkkkkkk
+
+
+와 벌써 새벽 2시야?
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu2$ cat TEST/ETC/kkk.txt
+kkk의 새로운 파일입니다.
+
+하하하 이건 몰랐지
+
+최종 마무리 단계!
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu2$ ./ssu_cleanupd
+20220000> modify TEST -d new_dir -i 30 -l 30    
+lstat error
+<new_dir>는 존재하지 않습니다.
+20220000> exit
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu2$ mkdir new_dir
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu2$ ./ssu_cleanupd
+20220000> modify TEST -d new_dir -i 30 -l 30
+20220000> show
+Current working daemon process list
+
+
+0. exit
+1. /home/junyoung/LinuxProgramming/ssu2/TEST
+
+Select one to see process info : 1
+1. config detail
+
+monitoring_path : /home/junyoung/LinuxProgramming/ssu2/TEST
+pid : 2412
+start_time : 2025-06-20 01:47:23
+output_path : /home/junyoung/LinuxProgramming/ssu2/new_dir
+time_interval : 30
+max_log_lines : 30
+exclude_path : /home/junyoung/LinuxProgramming/ssu2/TEST/A
+extension : c,txt
+mode : 1
+
+2. log detail
+
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/abc.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/abc.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t1.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t1.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t2.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t2.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t3.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t3.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/good.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/good.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/a.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/a.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/b.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/b.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/c.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/c.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/hello.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/hello.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/kkk.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/newTime.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/newTime.txt]
+[01:49:33] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/a.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/a.c]
+[01:49:53] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/c.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/c.c]
+[01:50:43] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/kkk.txt]
+
+20220000> show
+Current working daemon process list
+
+
+0. exit
+1. /home/junyoung/LinuxProgramming/ssu2/TEST
+
+Select one to see process info : 1
+1. config detail
+
+monitoring_path : /home/junyoung/LinuxProgramming/ssu2/TEST
+pid : 2412
+start_time : 2025-06-20 01:47:23
+output_path : /home/junyoung/LinuxProgramming/ssu2/new_dir
+time_interval : 30
+max_log_lines : 30
+exclude_path : /home/junyoung/LinuxProgramming/ssu2/TEST/A
+extension : c,txt
+mode : 1
+
+2. log detail
+
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/abc.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/abc.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t1.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t1.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t2.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t2.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t3.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/t3.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/good.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/good.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/a.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/a.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/b.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/b.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/c.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/c.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/hello.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/hello.c]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/kkk.txt]
+[01:47:23] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/newTime.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/newTime.txt]
+[01:49:33] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/a.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/a.c]
+[01:49:53] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/c.c] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/c/c.c]
+[01:50:43] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/TEST_arranged/txt/kkk.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/abc.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/abc.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t1.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/t1.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t2.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/t2.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t3.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/t3.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/a.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/a.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/c.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/c.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/good.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/good.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/kkk.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/b.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/b.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/hello.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/hello.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/newTime.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/newTime.txt]
+
+
+20220000> modify TEST -l 10
+20220000> show
+Current working daemon process list
+
+
+0. exit
+1. /home/junyoung/LinuxProgramming/ssu2/TEST
+
+Select one to see process info : 1
+1. config detail
+
+monitoring_path : 
+pid : 2412
+start_time : 2025-06-20 01:47:23
+output_path : /home/junyoung/LinuxProgramming/ssu2/new_dir
+time_interval : 30
+max_log_lines : 10
+exclude_path : /home/junyoung/LinuxProgramming/ssu2/TEST/A
+extension : c,txt
+mode : 1
+
+2. log detail
+
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t2.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/t2.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/B/t3.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/t3.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/a.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/a.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/C/c.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/c.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/good.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/good.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/ETC/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/kkk.txt]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/b.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/b.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/hello.c] [/home/junyoung/LinuxProgramming/ssu2/new_dir/c/hello.c]
+[01:56:51] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/newTime.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/newTime.txt]
+[02:01:21] [2412] [/home/junyoung/LinuxProgramming/ssu2/TEST/kkk.txt] [/home/junyoung/LinuxProgramming/ssu2/new_dir/txt/kkk.txt]
+
+20220000> remove     
+Usage:
+  > remove <DIR_PATH>
+     <none> : remove deamon process monitoring the <DIR_PATH> directory
+
+20220000> remove TEST
+20220000> exit
+junyoung@Ubuntu-20:~/LinuxProgramming/ssu2$ 
+

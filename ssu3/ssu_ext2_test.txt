@@ -1,0 +1,433 @@
+junyoung@Ubuntu-20:~/ssu3$ ./ssu_ext2 testdisk.img
+20220000> tree .
+.
+├─  O~O
+├─  now.c
+├─  start.txt
+├─  test1
+└─  testing_arranged
+
+4 directories, 2 files
+
+20220000> print start.txt
+=============================================
+#####     >>>   - S T A R T -   <<<     #####
+=============================================
+
+20220000> tree . -rsp
+[drwxr-xr-x 4096] .
+├─  [drwxr-xr-x 4096] O~O
+│   ├─  [drwxr-xr-x 4096] A1
+│   │   └─  [drwxr-xr-x 4096] A2
+│   │       └─  [drwxr-xr-x 4096] A3
+│   │           └─  [drwxr-xr-x 4096] A4
+│   │               └─  [drwxr-xr-x 4096] A5
+│   │                   ├─  [drwxr-xr-x 4096] A6
+│   │                   │   └─  [drwxr-xr-x 4096] A7
+│   │                   │       └─  [drwxr-xr-x 4096] A8
+│   │                   │           └─  [drwxr-xr-x 4096] A9
+│   │                   │               └─  [drwxr-xr-x 4096] A10
+│   │                   │                   └─  [-rw-r--r-- 20] record2.txt
+│   │                   └─  [-rw-r--r-- 19] record1.txt
+│   ├─  [-rwxr-xr-x 16696] a.out
+│   ├─  [-rw-r--r-- 78] hello.c
+│   ├─  [drwxr-xr-x 4096] j
+│   │   ├─  [drwxr-xr-x 4096] .hidden
+│   │   │   └─  [-rw-r--r-- 21] list
+│   │   └─  [-rw-r--r-- 21] list
+│   ├─  [-rw-r--r-- 307] open.c
+│   └─  [-rw-r--r-- 66284] ssu_cleanupd_test.txt
+├─  [-rw-r--r-- 1689] now.c
+├─  [-rw-r--r-- 138] start.txt
+├─  [drwxr-xr-x 4096] test1
+│   ├─  [drwxr-xr-x 4096] a
+│   │   ├─  [drwxr-xr-x 4096] b
+│   │   ├─  [-rw-r--r-- 20] c.txt
+│   │   └─  [drwxr-xr-x 4096] d
+│   ├─  [-rw-r--r-- 3] e.txt
+│   └─  [drwxr-xr-x 4096] f
+│       ├─  [drwxr-xr-x 4096] g
+│       │   └─  [-rw-r--r-- 26] h.txt
+│       └─  [-rw-r--r-- 2] i.txt
+└─  [drwxr-xr-x 4096] testing_arranged
+    ├─  [drwxr-xr-x 4096] dat
+    │   └─  [-rw-r--r-- 68] ssu_exam.dat
+    ├─  [drwxr-xr-x 4096] h
+    │   └─  [-rw-r--r-- 93] ssu_employee.h
+    ├─  [drwxr-xr-x 4096] hwp
+    │   ├─  [-rw-r--r-- 297984] B3.hwp
+    │   ├─  [-rw-r--r-- 233984] B4.hwp
+    │   ├─  [-rw-r--r-- 194048] B5.hwp
+    │   ├─  [-rw-r--r-- 180736] B6.hwp
+    │   └─  [-rw-r--r-- 337920] B7.hwp
+    ├─  [drwxr-xr-x 4096] txt
+    │   ├─  [-rw-r--r-- 29] ssu_Design_Project.txt
+    │   ├─  [-rw-r--r-- 12] ssu_expr.txt
+    │   ├─  [-rw-r--r-- 25] ssu_hole.txt
+    │   └─  [-rw-r--r-- 74] ssu_test.txt
+    └─  [drwxr-xr-x 4096] zip
+        ├─  [-rw-r--r-- 258611] B3_20220000_V1.zip
+        ├─  [-rw-r--r-- 200446] B4_20220000_V1.zip
+        ├─  [-rw-r--r-- 164017] B5_20220000_V1.zip
+        ├─  [-rw-r--r-- 157401] B6_20220000_V1.zip
+        └─  [-rw-r--r-- 294451] B7_20220000_V1.zip
+
+26 directories, 30 files
+
+20220000> print ./O~O//j/list
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+20220000> print ./O~O/j/////.hidden/list
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+20220000> tree test1 -r -p
+[drwxr-xr-x] test1
+├─  [drwxr-xr-x] a
+│   ├─  [drwxr-xr-x] b
+│   ├─  [-rw-r--r--] c.txt
+│   └─  [drwxr-xr-x] d
+├─  [-rw-r--r--] e.txt
+└─  [drwxr-xr-x] f
+    ├─  [drwxr-xr-x] g
+    │   └─  [-rw-r--r--] h.txt
+    └─  [-rw-r--r--] i.txt
+
+6 directories, 4 files
+
+20220000> tree /O~O
+Error: '/O~O' is not relative path
+
+20220000> tree ./O~O
+./O~O
+├─  A1
+├─  a.out
+├─  hello.c
+├─  j
+├─  open.c
+└─  ssu_cleanupd_test.txt
+
+3 directories, 4 files
+
+20220000> tree ./O~O/A1/A2/A3/A4/A5/../../. -r -s
+[4096] ./O~O/A1/A2/A3/A4/A5/../../.
+└─  [4096] A4
+    └─  [4096] A5
+        ├─  [4096] A6
+        │   └─  [4096] A7
+        │       └─  [4096] A8
+        │           └─  [4096] A9
+        │               └─  [4096] A10
+        │                   └─  [20] record2.txt
+        └─  [19] record1.txt
+
+8 directories, 2 files
+
+20220000> print O~O/A1/A2/A3/A4/A5/record1.txt               
+>>> --- A5 --- <<<
+
+20220000> print O~O/A1/A2/A3/A4/A5/A6/A7/A8/A9/A10/record2.txt
+>>> --- A10 --- <<<
+
+20220000> print O~O/A1/A2/A3/A4/A5/record1.txt/../../A4/A5/record1.txt
+Error: 'record1.txt' is not directory
+
+20220000> print O~O/A1/A2/A3/A4/A5/../../././A4/A5/record1.txt    
+>>> --- A5 --- <<<
+
+20220000> tree ./O~O/A1/A2/A3/A4/A5/A6 -r
+./O~O/A1/A2/A3/A4/A5/A6
+└─  A7
+    └─  A8
+        └─  A9
+            └─  A10
+                └─  record2.txt
+
+5 directories, 1 files
+
+20220000> tree ./O~O/A1/A2/A3/A4/A5
+./O~O/A1/A2/A3/A4/A5
+├─  A6
+└─  record1.txt
+
+2 directories, 1 files
+
+20220000> print O~O
+Error: 'O~O' is not regular file
+
+20220000> tree O~O
+O~O
+├─  A1
+├─  a.out
+├─  hello.c
+├─  j
+├─  open.c
+└─  ssu_cleanupd_test.txt
+
+3 directories, 4 files
+
+20220000> print O~O/open.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+
+int main(void)
+{
+	char *fname = "ssu_test.txt";
+	int fd;
+
+	if ((fd = open(fname, O_RDONLY)) < 0) {
+		fprintf(stderr, "open error for %s\n", fname);
+		exit(1);
+	}
+	else
+		printf("Success!\nFilename : %s\nDescriptor : %d\n", fname, fd);
+
+	exit(0);
+}
+
+20220000> print O~O/hello.c
+#include <stdio.h>
+
+int main(void)
+{
+	printf("Hello, World!\n");
+	return 0;
+}
+
+20220000> print O~O/a.out
+@@@@�����   ``�-�=�=X`�-�=�=�888 XXXDDS�td888 P�td   DDQ�tdR�td�-�=�=HH/lib64/ld-linux-x86-64.so.2GNU�GNUC:S�j&��PAe+�1L�j�GNU��e�m= 
+     Y h "libc.so.6puts__cxa_finalize__libc_start_mainGLIBC_2.2.5_ITM_deregisterTMCloneTable__gmon_start___ITM_registerTMCloneTa�H�=��R/��H�=y/H�r/H9�tH�./H��tH�����H�=I/H�5B/H)�H��H��?H��H�H��tH�/H����fD�����=/u+UH�=�.H��tH�
+                                                                                               H�=�.�����d�����.]������w�����UH��H�=�������]�f.�f���AWL�=;,AVI��AUI��ATA��UH�-,,SL)�H��_���H��t1��L��L��D��A��H��H9�u�H�[]A\A]A^A_�ff.������H�H��Hello, World!@
+                                                                                                                               ���t,����<����L���\5����\��������4zRx
+                                   ����/D$4���� FJ
+                                                  �?�:*3$"\����t�����a���
+RC
+D�h���eF�I�E �E(�D0�H8�G@n8A0A(B BB�����@
+�������o�p�
+�
+ �?��  ������o���o���o����o�=@GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.08X|���	
+ 
+ �
+ @P`�  X �=�=�=�?@�@�
+                     ��!7�@F�=m@y�=������\!����=��=��=� ��?�
+                                                            � j @0B@�Ih@u @� �pe��@n`/��@�I@� �"crtstuff.cderegister_tm_clones__do_global_dtors_auxcompleted.8061__do_global_dtors_aux_fini_array_entryframe_dummy__frame_dummy_init_array_entryhello.c__FRAME_END____init_array_end_DYNAMIC__init_array_start__GNU_EH_FRAME_HDR_GLOBAL_OFFSET_TABLE___libc_csu_fini_ITM_deregisterTMCloneTableputs@@GLIBC_2.2.5_edata__libc_start_main@@GLIBC_2.2.5__data_start__gmon_start____dso_handle_IO_stdin_used__libc_csu_init__bss_startmain__TMC_END___ITM_registerTMCloneTable__cxa_finalize@@GLIBC_2.2.5.symtab.strtab.shstrtab.interp.note.gnu.property.note.gnu.build-id.note.ABI-tag.gnu.hash.dynsym.dynstr.gnu.version.gnu.version_r.rela.dyn.rela.plt.init.plt.got.plt.sec.text.fini.rodata.eh_frame_hdr.eh_frame.init_array.fini_array.dynamic.data.bss.comment#886XX$I|| W���o��a
+�  �  D�X ������=�-��?�@0                                                            ��ipp�q���o��~���o�  �B��   �@@�PP�``����
+                       @00+@0. X6[8�
+20220000>
+20220000> tree test1 . -r -s -p
+Error: Only one path should be inputed.
+Usage:
+  > tree <PATH> [OPTION]... : display the directory structure if <PATH> is a directory
+     -r : display the directory structure recursively if <PATH> is a directory
+     -s : display the directory structure if <PATH> is a directory, including the size of each file
+     -p : display the directory structure if <PATH> is a directory, including the permissions of each directory and file
+
+20220000> tree test      
+Error: 'test' couldn't be verified
+Usage:
+  > tree <PATH> [OPTION]... : display the directory structure if <PATH> is a directory
+     -r : display the directory structure recursively if <PATH> is a directory
+     -s : display the directory structure if <PATH> is a directory, including the size of each file
+     -p : display the directory structure if <PATH> is a directory, including the permissions of each directory and file
+
+20220000> tree test1 -r -n
+Usage:
+  > tree <PATH> [OPTION]... : display the directory structure if <PATH> is a directory
+     -r : display the directory structure recursively if <PATH> is a directory
+     -s : display the directory structure if <PATH> is a directory, including the size of each file
+     -p : display the directory structure if <PATH> is a directory, including the permissions of each directory and file
+
+20220000> tree test1 -r
+test1
+├─  a
+│   ├─  b
+│   ├─  c.txt
+│   └─  d
+├─  e.txt
+└─  f
+    ├─  g
+    │   └─  h.txt
+    └─  i.txt
+
+6 directories, 4 files
+
+20220000> tree test1/a/b
+test1/a/b
+
+1 directories, 0 files
+
+20220000> tree test1/a/d -rsp
+[drwxr-xr-x 4096] test1/a/d
+
+1 directories, 0 files
+
+20220000> tree test1/f/g -rsp
+[drwxr-xr-x 4096] test1/f/g
+└─  [-rw-r--r-- 26] h.txt
+
+1 directories, 1 files
+
+20220000> tree test1/f/i.txt
+Error: 'i.txt' is not directory
+
+20220000> tree test1/f/
+test1/f/
+├─  g
+└─  i.txt
+
+2 directories, 1 files
+
+20220000> tree .
+.
+├─  O~O
+├─  now.c
+├─  start.txt
+├─  test1
+└─  testing_arranged
+
+4 directories, 2 files
+
+20220000> tree testing_arranged -r
+testing_arranged
+├─  dat
+│   └─  ssu_exam.dat
+├─  h
+│   └─  ssu_employee.h
+├─  hwp
+│   ├─  B3.hwp
+│   ├─  B4.hwp
+│   ├─  B5.hwp
+│   ├─  B6.hwp
+│   └─  B7.hwp
+├─  txt
+│   ├─  ssu_Design_Project.txt
+│   ├─  ssu_expr.txt
+│   ├─  ssu_hole.txt
+│   └─  ssu_test.txt
+└─  zip
+    ├─  B3_20220000_V1.zip
+    ├─  B4_20220000_V1.zip
+    ├─  B5_20220000_V1.zip
+    ├─  B6_20220000_V1.zip
+    └─  B7_20220000_V1.zip
+
+6 directories, 16 files
+
+20220000>
+20220000> tree testing_arranged -r
+testing_arranged
+├─  dat
+│   └─  ssu_exam.dat
+├─  h
+│   └─  ssu_employee.h
+├─  hwp
+│   ├─  B3.hwp
+│   ├─  B4.hwp
+│   ├─  B5.hwp
+│   ├─  B6.hwp
+│   └─  B7.hwp
+├─  txt
+│   ├─  ssu_Design_Project.txt
+│   ├─  ssu_expr.txt
+│   ├─  ssu_hole.txt
+│   └─  ssu_test.txt
+└─  zip
+    ├─  B3_20220000_V1.zip
+    ├─  B4_20220000_V1.zip
+    ├─  B5_20220000_V1.zip
+    ├─  B6_20220000_V1.zip
+    └─  B7_20220000_V1.zip
+
+6 directories, 16 files
+
+20220000> print testing_arranged/txt/ssu_test.txt -1
+Usage:
+  > print <PATH> [OPTION]... : print the contents on the standard output if <PATH> is file
+     -n <line_number> : print only the first <line_number> lines of its contents on the standard output if <PATH> is file
+
+20220000> print testing_arranged/txt/ssu_test.txt ssu_hole.txt 
+Usage:
+  > print <PATH> [OPTION]... : print the contents on the standard output if <PATH> is file
+     -n <line_number> : print only the first <line_number> lines of its contents on the standard output if <PATH> is file
+
+20220000> print testing_arranged/txt/ssu_test.txt -n abc
+Error: Invalid factor [abc] entered with -n option
+Usage:
+  > print <PATH> [OPTION]... : print the contents on the standard output if <PATH> is file
+     -n <line_number> : print only the first <line_number> lines of its contents on the standard output if <PATH> is file
+
+20220000> print testing_arranged/txt/ssu_test.txt -n -2
+Error: The -n option[-2] is limited to natural numbers
+Usage:
+  > print <PATH> [OPTION]... : print the contents on the standard output if <PATH> is file
+     -n <line_number> : print only the first <line_number> lines of its contents on the standard output if <PATH> is file
+
+20220000> print testing_arranged/txt/ssu_test.txt -n 0
+
+20220000> print testing_arranged/txt/ssu_test.txt -n 2
+Linux System Programming!
+Unix System Programming!
+
+20220000> print testing_arranged/txt/ssu_test.txt -n 10
+Linux System Programming!
+Unix System Programming!
+Linux Mania
+Unix Mania
+
+20220000> print testing_arranged/txt/ssu_test.txt ssu_Design_Project.txt -n 3
+Error: Only one path and one factor of "n" should be inputed.
+Usage:
+  > print <PATH> [OPTION]... : print the contents on the standard output if <PATH> is file
+     -n <line_number> : print only the first <line_number> lines of its contents on the standard output if <PATH> is file
+
+20220000> print testing_arranged/txt/ssu_Design_Project.txt
+이젠 진짜 끝이다!!!!!
+
+20220000> print testing_arranged/dat/ssu_exam.dat
+OSLAB�?y��
+20220000> help abc
+Error: invalid command -- 'abc'
+Usage:
+  > tree <PATH> [OPTION]... : display the directory structure if <PATH> is a directory
+     -r : display the directory structure recursively if <PATH> is a directory
+     -s : display the directory structure if <PATH> is a directory, including the size of each file
+     -p : display the directory structure if <PATH> is a directory, including the permissions of each directory and file
+  > print <PATH> [OPTION]... : print the contents on the standard output if <PATH> is file
+     -n <line_number> : print only the first <line_number> lines of its contents on the standard output if <PATH> is file
+  > help [COMMAND] : show commands for program
+  > exit : exit program
+
+20220000> Goodbye
+Error: "Goodbye" is not a specified command.
+Usage:
+  > tree <PATH> [OPTION]... : display the directory structure if <PATH> is a directory
+     -r : display the directory structure recursively if <PATH> is a directory
+     -s : display the directory structure if <PATH> is a directory, including the size of each file
+     -p : display the directory structure if <PATH> is a directory, including the permissions of each directory and file
+  > print <PATH> [OPTION]... : print the contents on the standard output if <PATH> is file
+     -n <line_number> : print only the first <line_number> lines of its contents on the standard output if <PATH> is file
+  > help [COMMAND] : show commands for program
+  > exit : exit program
+
+20220000> exit
+
+junyoung@Ubuntu-20:~/ssu3$ 
+

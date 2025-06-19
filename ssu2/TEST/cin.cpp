@@ -1,0 +1,2 @@
+new cin
+abcabc
